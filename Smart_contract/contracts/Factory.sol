@@ -25,9 +25,10 @@ contract PiggyBankFactory {
     error ContractCreationFailed();
     
     constructor(address _developersAddress) {
+        
         if(_developersAddress == address(0)) revert ZeroAddress();
         developersAddress = _developersAddress;
-        piggyBankCounter = 0;
+        
     }
     
     function createPiggyBank(string memory purpose) external returns (address) {
